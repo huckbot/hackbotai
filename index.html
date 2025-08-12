@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BetWinner Aviator Signal Pro</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #0a1b2d;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    }
+    h1 {
+        color: #ffcc00;
+        font-size: 26px;
+        margin-bottom: 5px;
+    }
+    .subtitle {
+        font-size: 14px;
+        color: #ccc;
+        margin-bottom: 20px;
+    }
+    .input-box {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 15px;
+        border-radius: 10px;
+        width: 250px;
+        margin: auto;
+    }
+    input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 16px;
+        text-align: center;
+        outline: none;
+    }
+    input::placeholder {
+        color: #aaa;
+    }
+    button {
+        background: #ffcc00;
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 8px;
+        margin-top: 15px;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover {
+        background: #ffaa00;
+    }
+    .result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
+        display: none;
+    }
+    .loading {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #ffcc00;
+        display: none;
+    }
+    .footer {
+        margin-top: 30px;
+        font-size: 14px;
+        color: #ccc;
+    }
+    .links {
+        margin-top: 10px;
+    }
+    .links a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        background: #1e90ff;
+        color: white;
+    }
+    .links a.telegram {
+        background: #0088cc;
+    }
+    .instruction-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #ffcc00;
+        color: black;
+        padding: 12px 18px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 50px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<h1>🎯 BetWinner Aviator Pro</h1>
+<div class="subtitle">Analyse officielle des signaux Aviator - Côte d’Ivoire</div>
+
+<div class="input-box">
+    <input type="number" id="stake" placeholder="Entrez votre mise (XOF)">
+    <button onclick="generateSignal()">🎲 Générer le signal</button>
+    <div class="loading" id="loading">⏳ Analyse et génération en cours...</div>
+    <div class="result" id="result"></div>
+</div>
+
+<div class="footer">
+    📌 Contact officiel pour assistance:<br>
+    <div class="links">
+        <a href="https://t.me/JosephBouba_hackbot" target="_blank" class="telegram">📩 @JosephBouba_hackbot</a>
+        <a href="https://mqzegh.top/2peu?p=%2Fregistration%2F&s1=mag" target="_blank">🎮 Jouer sur BetWinner</a>
+    </div>
+</div>
+
+<div class="instruction-btn" onclick="alert('📜 Guide de jeu:\n\n1️⃣ Entrez votre mise en XOF\n2️⃣ Appuyez sur Générer le signal\n3️⃣ Suivez le coefficient affiché dans Aviator\n4️⃣ Gagnez avec 97% de précision ✅')">
+    ❓ Comment jouer
+</div>
+
+<script>
+function generateSignal() {
+    let stake = document.getElementById("stake").value;
+    if (!stake) {
+        alert("Veuillez entrer votre mise en XOF !");
+        return;
+    }
+    
+    let loading = document.getElementById("loading");
+    let result = document.getElementById("result");
+    
+    result.style.display = "none";
+    loading.style.display = "block";
+    
+    setTimeout(() => {
+        let coef = (Math.random() * (3.00 - 1.5) + 1.5).toFixed(2);
+        let winPercent = Math.floor(Math.random() * (98 - 90 + 1) + 90);
+        let winAmount = (stake * coef).toFixed(2);
+        
+        loading.style.display = "none";
+        result.innerHTML = `📊 Coefficient: <b>${coef}x</b><br>💰 Gain possible: <b>${winAmount} XOF</b><br>✅ Probabilité de réussite: <b>${winPercent}%</b>`;
+        result.style.display = "block";
+    }, 2000);
+}
+</script>
+
+</body>
+</html>
