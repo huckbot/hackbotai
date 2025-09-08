@@ -7,25 +7,41 @@
 <style>
     body {
         font-family: Arial, sans-serif;
-        background: #0a1b2d;
+        background: url('/mnt/data/27dc15fc-45cc-436f-9a9b-21c8790b9bbf.png') no-repeat center center fixed;
+        background-size: cover;
         color: white;
         text-align: center;
         padding: 20px;
+        position: relative;
+    }
+    /* затемнённый фон под текст для контраста */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(10, 27, 45, 0.75);
+        z-index: -1;
     }
     h1 {
         color: #ffcc00;
         font-size: 28px;
         margin-bottom: 5px;
+        position: relative;
+        z-index: 1;
     }
     .subtitle {
         font-size: 14px;
         color: #ccc;
         margin-bottom: 20px;
+        position: relative;
+        z-index: 1;
     }
     .trust-text {
         font-size: 13px;
         color: #a0a0a0;
         margin-bottom: 15px;
+        position: relative;
+        z-index: 1;
     }
     .input-box {
         background: rgba(255, 255, 255, 0.05);
@@ -33,6 +49,8 @@
         border-radius: 10px;
         width: 280px;
         margin: auto;
+        position: relative;
+        z-index: 1;
     }
     input {
         width: 100%;
@@ -45,9 +63,7 @@
         text-align: center;
         outline: none;
     }
-    input::placeholder {
-        color: #aaa;
-    }
+    input::placeholder { color: #aaa; }
     button {
         background: #ffcc00;
         color: black;
@@ -60,59 +76,25 @@
         cursor: pointer;
         width: 100%;
     }
-    button:hover {
-        background: #ffaa00;
-    }
-    .loading, .result {
-        margin-top: 15px;
-        font-size: 16px;
-        display: none;
-    }
-    .loading {
-        color: #ffcc00;
-    }
-    .dot {
-        display: inline-block;
-        animation: blink 1s infinite;
-        font-weight: bold;
-    }
+    button:hover { background: #ffaa00; }
+    .loading, .result { margin-top: 15px; font-size: 16px; display: none; position: relative; z-index: 1; }
+    .loading { color: #ffcc00; }
+    .dot { display: inline-block; animation: blink 1s infinite; font-weight: bold; }
     .dot:nth-child(2) { animation-delay: 0.2s; }
     .dot:nth-child(3) { animation-delay: 0.4s; }
-
-    @keyframes blink {
-        0%, 80%, 100% { opacity: 0; }
-        40% { opacity: 1; }
-    }
-
-    .footer {
-        margin-top: 25px;
-        font-size: 14px;
-        color: #ccc;
-    }
-    .links a {
-        display: inline-block;
-        margin: 5px;
-        padding: 10px 15px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        color: white;
-    }
+    @keyframes blink { 0%, 80%, 100% { opacity: 0; } 40% { opacity: 1; } }
+    .footer { margin-top: 25px; font-size: 14px; color: #ccc; position: relative; z-index: 1; }
+    .links a { display: inline-block; margin: 5px; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; }
     .links a.telegram { background: #0088cc; }
     .links a.melbet { background: #1e90ff; }
-
     .instruction-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #ffcc00;
-        color: black;
-        padding: 12px 18px;
-        font-size: 14px;
-        font-weight: bold;
-        border-radius: 50px;
+        position: fixed; bottom: 20px; right: 20px;
+        background: #ffcc00; color: black;
+        padding: 12px 18px; font-size: 14px;
+        font-weight: bold; border-radius: 50px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
         cursor: pointer;
+        z-index: 1;
     }
 </style>
 </head>
@@ -157,7 +139,6 @@ function generateSignal() {
     result.style.display = "none";
     loading.style.display = "block";
     
-    // Animation du coefficient comme un vrai calcul
     let coef = (Math.random() * (3.00 - 1.5) + 1.5).toFixed(2);
     let winPercent = Math.floor(Math.random() * (98 - 90 + 1) + 90);
     let winAmount = (stake * coef).toFixed(2);
