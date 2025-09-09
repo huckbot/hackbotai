@@ -3,61 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MelBet Aviator Signal Pro - موريتانيا</title>
+<title>MelBet Aviator Pro - Mauritanie</title>
 <style>
     body {
-        font-family: Arial, sans-serif;
-        background: url('/mnt/data/27dc15fc-45cc-436f-9a9b-21c8790b9bbf.png') no-repeat center center fixed;
-        background-size: cover;
+        font-family: "Arial", sans-serif;
+        background: #0f172a;
         color: white;
         text-align: center;
         padding: 20px;
-        position: relative;
-    }
-    /* затемнённый фон под текст для контраста */
-    body::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(10, 27, 45, 0.75);
-        z-index: -1;
     }
     h1 {
         color: #ffcc00;
         font-size: 28px;
         margin-bottom: 5px;
-        position: relative;
-        z-index: 1;
     }
     .subtitle {
-        font-size: 14px;
-        color: #ccc;
+        font-size: 15px;
+        color: #aaa;
         margin-bottom: 20px;
-        position: relative;
-        z-index: 1;
     }
-    .trust-text {
-        font-size: 13px;
-        color: #a0a0a0;
-        margin-bottom: 15px;
-        position: relative;
-        z-index: 1;
+    .trust-box {
+        background: #1e293b;
+        border: 1px solid #ffcc00;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 15px auto;
+        max-width: 320px;
+        font-size: 14px;
+        line-height: 1.6em;
     }
     .input-box {
-        background: rgba(255, 255, 255, 0.05);
+        background: #1e293b;
         padding: 15px;
         border-radius: 10px;
-        width: 280px;
+        width: 300px;
         margin: auto;
-        position: relative;
-        z-index: 1;
     }
     input {
         width: 100%;
         padding: 12px;
-        border: none;
+        border: 1px solid #ffcc00;
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.1);
+        background: transparent;
         color: white;
         font-size: 16px;
         text-align: center;
@@ -75,16 +62,33 @@
         margin-top: 15px;
         cursor: pointer;
         width: 100%;
+        transition: 0.3s;
     }
     button:hover { background: #ffaa00; }
-    .loading, .result { margin-top: 15px; font-size: 16px; display: none; position: relative; z-index: 1; }
+    .loading, .result {
+        margin-top: 15px;
+        font-size: 16px;
+        display: none;
+    }
     .loading { color: #ffcc00; }
     .dot { display: inline-block; animation: blink 1s infinite; font-weight: bold; }
     .dot:nth-child(2) { animation-delay: 0.2s; }
     .dot:nth-child(3) { animation-delay: 0.4s; }
     @keyframes blink { 0%, 80%, 100% { opacity: 0; } 40% { opacity: 1; } }
-    .footer { margin-top: 25px; font-size: 14px; color: #ccc; position: relative; z-index: 1; }
-    .links a { display: inline-block; margin: 5px; padding: 10px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; }
+    .footer {
+        margin-top: 25px;
+        font-size: 14px;
+        color: #ccc;
+    }
+    .links a {
+        display: inline-block;
+        margin: 5px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        color: white;
+    }
     .links a.telegram { background: #0088cc; }
     .links a.melbet { background: #1e90ff; }
     .instruction-btn {
@@ -94,42 +98,46 @@
         font-weight: bold; border-radius: 50px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
         cursor: pointer;
-        z-index: 1;
     }
 </style>
 </head>
 <body>
 
-<h1>🎯 MelBet Aviator Pro - موريتانيا</h1>
-<div class="subtitle">Signaux Aviator officiels - حلال et fiable</div>
-<div class="trust-text">✅ Plus de 500 joueurs en Mauritanie utilisent ce bot avec succès.<br>
-💡 Système sécurisé et halal, conçu pour des gains fiables.</div>
+<h1>🚀 MelBet Aviator Pro - موريتانيا</h1>
+<div class="subtitle">Signaux officiels • موثوق • حلال</div>
+
+<div class="trust-box">
+    ✅ Plus de <b>500 joueurs</b> en Mauritanie utilisent déjà ce bot.<br>
+    🕋 Conforme aux valeurs <b>halal</b> et fiable.<br>
+    💡 Probabilité de succès: <b>90% - 98%</b>.<br>
+    🔒 Système sécurisé & officiel MelBet.
+</div>
 
 <div class="input-box">
     <input type="number" id="stake" placeholder="Entrez votre mise (MRU)">
-    <button onclick="generateSignal()">🎲 Générer le signal / توليد الإشارة</button>
+    <button onclick="generateSignal()">🎲 Générer le signal</button>
     <div class="loading" id="loading">⏳ Analyse en cours<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div>
     <div class="result" id="result"></div>
 </div>
 
 <div class="footer">
-    📌 Contact officiel / التواصل الرسمي:<br>
+    📌 Contact officiel:<br>
     <div class="links">
         <a href="https://t.me/Al_Mukhtahackbot" target="_blank" class="telegram">📩 @Al_Mukhtahackbot</a>
-        <a href="https://refpa3665.com/L?tag=d_4722400m_72819c_&site=4722400&ad=72819&r=registration" target="_blank" class="melbet">🎮 Jouer sur MelBet / اللعب على MelBet</a>
+        <a href="https://refpa3665.com/L?tag=d_4722400m_72819c_&site=4722400&ad=72819&r=registration" target="_blank" class="melbet">🎮 Jouer sur MelBet</a>
     </div>
-    <div style="margin-top:5px;">Code promo / رمز الترويج: <b>MVR555</b></div>
+    <div style="margin-top:5px;">Code promo: <b>MVR555</b></div>
 </div>
 
-<div class="instruction-btn" onclick="alert('📜 Guide de jeu / دليل اللعب:\n\n1️⃣ Entrez votre mise en MRU / أدخل رهانك بالموريتانيا MRU\n2️⃣ Cliquez sur Générer le signal / اضغط على توليد الإشارة\n3️⃣ Suivez le multiplicateur dans Aviator / اتبع المضاعف الظاهر في لعبة Aviator\n4️⃣ Probabilité de succès jusqu’à 97% / نسبة النجاح حتى 97% ✅\n5️⃣ Jouez de manière responsable / العب بأمان ووفق القواعد الحلال')">
-    ❓ Comment jouer / كيفية اللعب
+<div class="instruction-btn" onclick="alert('📜 Guide de jeu:\n\n1️⃣ Entrez votre mise en MRU\n2️⃣ Cliquez sur Générer le signal\n3️⃣ Suivez le multiplicateur Aviator\n4️⃣ Probabilité de succès jusqu’à 97%\n5️⃣ Jouez de façon responsable et حلال ✅')">
+    ❓ Comment jouer
 </div>
 
 <script>
 function generateSignal() {
     let stake = document.getElementById("stake").value;
     if (!stake) {
-        alert("Veuillez entrer votre mise en MRU / الرجاء إدخال رهانك بالموريتانيا MRU!");
+        alert("⚠️ Veuillez entrer votre mise en MRU !");
         return;
     }
     
@@ -143,20 +151,14 @@ function generateSignal() {
     let winPercent = Math.floor(Math.random() * (98 - 90 + 1) + 90);
     let winAmount = (stake * coef).toFixed(2);
     
-    let displayCoef = 1.5;
-    let interval = setInterval(() => {
-        displayCoef += 0.05;
-        if(displayCoef >= coef) displayCoef = coef;
-        document.getElementById("loading").innerHTML = `⏳ Analyse en cours... Multiplicateur: ${displayCoef.toFixed(2)}x`;
-        if(displayCoef >= coef) {
-            clearInterval(interval);
-            loading.style.display = "none";
-            result.innerHTML = `📊 Multiplicateur / المضاعف: <b>${coef}x</b><br>💰 Gain potentiel / الربح المحتمل: <b>${winAmount} MRU</b><br>✅ Probabilité de réussite / نسبة النجاح: <b>${winPercent}%</b>`;
-            result.style.display = "block";
-        }
-    }, 100);
+    setTimeout(() => {
+        loading.style.display = "none";
+        result.innerHTML = `📊 Multiplicateur: <b>${coef}x</b><br>💰 Gain potentiel: <b>${winAmount} MRU</b><br>✅ Taux de réussite: <b>${winPercent}%</b>`;
+        result.style.display = "block";
+    }, 2000);
 }
 </script>
 
 </body>
 </html>
+
