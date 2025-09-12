@@ -1,59 +1,84 @@
 <!DOCTYPE html>
-<html lang="ar-MR">
+<html lang="es-BO">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MelBet Aviator Pro - Mauritanie</title>
+<title>1xBet Aviator Señales - Bolivia</title>
 <style>
     body {
-        font-family: "Arial", sans-serif;
-        background: #0f172a;
+        font-family: Arial, sans-serif;
+        background: #0a1633;
         color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 🔵 Header estilo 1xBet */
+    header {
+        background: #002244;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 20px;
+        box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
+    }
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        color: #00a3ff;
+    }
+    .register-btn {
+        background: #00a3ff;
+        color: white;
+        padding: 8px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    .register-btn:hover {
+        background: #007acc;
+    }
+
+    /* 🔵 Main content */
+    main {
         text-align: center;
-        padding: 20px;
+        padding: 30px 20px;
     }
     h1 {
-        color: #ffcc00;
+        color: #00a3ff;
         font-size: 28px;
         margin-bottom: 5px;
     }
     .subtitle {
         font-size: 15px;
-        color: #aaa;
+        color: #bbb;
         margin-bottom: 20px;
     }
-    .trust-box {
-        background: #1e293b;
-        border: 1px solid #ffcc00;
-        border-radius: 10px;
-        padding: 15px;
-        margin: 15px auto;
-        max-width: 320px;
-        font-size: 14px;
-        line-height: 1.6em;
-    }
     .input-box {
-        background: #1e293b;
-        padding: 15px;
-        border-radius: 10px;
-        width: 300px;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        border-radius: 12px;
+        width: 320px;
         margin: auto;
+        box-shadow: 0px 0px 15px rgba(0,163,255,0.4);
     }
     input {
         width: 100%;
         padding: 12px;
-        border: 1px solid #ffcc00;
+        border: none;
         border-radius: 8px;
-        background: transparent;
+        background: rgba(255, 255, 255, 0.1);
         color: white;
         font-size: 16px;
         text-align: center;
         outline: none;
     }
-    input::placeholder { color: #aaa; }
+    input::placeholder {
+        color: #aaa;
+    }
     button {
-        background: #ffcc00;
-        color: black;
+        background: #00a3ff;
+        color: white;
         font-size: 18px;
         font-weight: bold;
         padding: 12px;
@@ -64,21 +89,85 @@
         width: 100%;
         transition: 0.3s;
     }
-    button:hover { background: #ffaa00; }
-    .loading, .result {
-        margin-top: 15px;
-        font-size: 16px;
+    button:hover {
+        background: #007acc;
+    }
+    .result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
         display: none;
     }
-    .loading { color: #ffcc00; }
-    .dot { display: inline-block; animation: blink 1s infinite; font-weight: bold; }
+    .loading {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #00a3ff;
+        display: none;
+    }
+    .dot {
+        display: inline-block;
+        animation: blink 1s infinite;
+        font-weight: bold;
+    }
     .dot:nth-child(2) { animation-delay: 0.2s; }
     .dot:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes blink { 0%, 80%, 100% { opacity: 0; } 40% { opacity: 1; } }
+
+    @keyframes blink {
+        0%, 80%, 100% { opacity: 0; }
+        40% { opacity: 1; }
+    }
+
+    /* 🔵 Opiniones */
+    .opiniones {
+        background: rgba(255, 255, 255, 0.05);
+        margin: 40px auto;
+        padding: 20px;
+        border-radius: 12px;
+        width: 85%;
+        max-width: 500px;
+        box-shadow: 0px 0px 15px rgba(0,163,255,0.4);
+    }
+    .opiniones h2 {
+        color: #00a3ff;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .opinion {
+        display: flex;
+        align-items: center;
+        background: rgba(0,0,0,0.3);
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+    .opinion img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    .opinion .texto {
+        text-align: left;
+    }
+    .opinion .nombre {
+        font-weight: bold;
+        color: #fff;
+    }
+    .opinion .comentario {
+        font-size: 13px;
+        color: #ddd;
+    }
+
+    /* 🔵 Footer */
     .footer {
-        margin-top: 25px;
+        margin-top: 20px;
         font-size: 14px;
         color: #ccc;
+        text-align: center;
+        padding-bottom: 30px;
+    }
+    .links {
+        margin-top: 10px;
     }
     .links a {
         display: inline-block;
@@ -87,15 +176,23 @@
         border-radius: 8px;
         text-decoration: none;
         font-weight: bold;
+        background: #1e90ff;
         color: white;
     }
-    .links a.telegram { background: #0088cc; }
-    .links a.melbet { background: #1e90ff; }
+    .links a.telegram {
+        background: #0088cc;
+    }
+
     .instruction-btn {
-        position: fixed; bottom: 20px; right: 20px;
-        background: #ffcc00; color: black;
-        padding: 12px 18px; font-size: 14px;
-        font-weight: bold; border-radius: 50px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #00a3ff;
+        color: white;
+        padding: 12px 18px;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 50px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
         cursor: pointer;
     }
@@ -103,41 +200,74 @@
 </head>
 <body>
 
-<h1>🚀 MelBet Aviator Pro - موريتانيا</h1>
-<div class="subtitle">Signaux officiels • موثوق • حلال</div>
+<!-- 🔵 Header -->
+<header>
+    <div class="logo">1xBet</div>
+    <a href="https://reffpa.com/L?tag=d_4319392m_22811c_&site=4319392&ad=22811&r=registration" target="_blank" class="register-btn">Registro</a>
+</header>
 
-<div class="trust-box">
-    ✅ Plus de <b>500 joueurs</b> en Mauritanie utilisent déjà ce bot.<br>
-    🕋 Conforme aux valeurs <b>halal</b> et fiable.<br>
-    💡 Probabilité de succès: <b>90% - 98%</b>.<br>
-    🔒 Système sécurisé & officiel MelBet.
-</div>
+<!-- 🔵 Main -->
+<main>
+    <h1>🎯 Aviator Señales - Bolivia</h1>
+    <div class="subtitle">Sistema exclusivo con hasta 97% de precisión</div>
 
-<div class="input-box">
-    <input type="number" id="stake" placeholder="Entrez votre mise (MRU)">
-    <button onclick="generateSignal()">🎲 Générer le signal</button>
-    <div class="loading" id="loading">⏳ Analyse en cours<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div>
-    <div class="result" id="result"></div>
-</div>
-
-<div class="footer">
-    📌 Contact officiel:<br>
-    <div class="links">
-        <a href="https://t.me/Al_Mukhtahackbot" target="_blank" class="telegram">📩 @Al_Mukhtahackbot</a>
-        <a href="https://refpa3665.com/L?tag=d_4722400m_72819c_&site=4722400&ad=72819&r=registration" target="_blank" class="melbet">🎮 Jouer sur MelBet</a>
+    <div class="input-box">
+        <input type="number" id="stake" placeholder="Ingrese su apuesta (BOB)">
+        <button onclick="generateSignal()">🎲 Generar Señal</button>
+        <div class="loading" id="loading">⏳ Analizando y generando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div>
+        <div class="result" id="result"></div>
     </div>
-    <div style="margin-top:5px;">Code promo: <b>MVR555</b></div>
+</main>
+
+<!-- 🔵 Opiniones -->
+<div class="opiniones">
+    <h2>💬 Opiniones de usuarios</h2>
+
+    <div class="opinion">
+        <img src="https://i.pravatar.cc/40?img=12" alt="avatar">
+        <div class="texto">
+            <div class="nombre">Carlos R.</div>
+            <div class="comentario">“Con solo 50 BOB gané más de 400 BOB en 10 minutos 🔥”</div>
+        </div>
+    </div>
+
+    <div class="opinion">
+        <img src="https://i.pravatar.cc/40?img=32" alt="avatar">
+        <div class="texto">
+            <div class="nombre">Valeria M.</div>
+            <div class="comentario">“Nunca pensé que funcionaría… ahora pago mis estudios con Aviator ✅”</div>
+        </div>
+    </div>
+
+    <div class="opinion">
+        <img src="https://i.pravatar.cc/40?img=56" alt="avatar">
+        <div class="texto">
+            <div class="nombre">Diego A.</div>
+            <div class="comentario">“El bot me dio señal 2.4x y me saqué 750 BOB. 100% recomendado 🙏”</div>
+        </div>
+    </div>
 </div>
 
-<div class="instruction-btn" onclick="alert('📜 Guide de jeu:\n\n1️⃣ Entrez votre mise en MRU\n2️⃣ Cliquez sur Générer le signal\n3️⃣ Suivez le multiplicateur Aviator\n4️⃣ Probabilité de succès jusqu’à 97%\n5️⃣ Jouez de façon responsable et حلال ✅')">
-    ❓ Comment jouer
+<!-- 🔵 Footer -->
+<div class="footer">
+    📌 Soporte oficial en Bolivia:<br>
+    <div class="links">
+        <a href="https://t.me/DiegoFernandez_bot" target="_blank" class="telegram">📩 @DiegoFernandez_bot</a>
+        <a href="https://reffpa.com/L?tag=d_4319392m_22811c_&site=4319392&ad=22811&r=registration" target="_blank">🎮 Jugar en 1xBet</a>
+    </div>
+    <div style="margin-top:5px;">Código promocional: <b>VIVA55</b></div>
+</div>
+
+<!-- 🔵 Botón de instrucciones -->
+<div class="instruction-btn" onclick="alert('📜 Guía rápida:\n\n1️⃣ Ingrese su apuesta en BOB\n2️⃣ Presione “Generar Señal”\n3️⃣ El sistema calcula un multiplicador de 1.5x a 3.0x\n4️⃣ Probabilidad estimada: 90% - 98%\n5️⃣ Use el código VIVA55 para bono extra')">
+    ❓ Cómo jugar
 </div>
 
 <script>
 function generateSignal() {
     let stake = document.getElementById("stake").value;
     if (!stake) {
-        alert("⚠️ Veuillez entrer votre mise en MRU !");
+        alert("⚠️ Por favor, ingrese su apuesta en BOB");
         return;
     }
     
@@ -147,17 +277,20 @@ function generateSignal() {
     result.style.display = "none";
     loading.style.display = "block";
     
-    let coef = (Math.random() * (3.00 - 1.5) + 1.5).toFixed(2);
-    let winPercent = Math.floor(Math.random() * (98 - 90 + 1) + 90);
-    let winAmount = (stake * coef).toFixed(2);
-    
     setTimeout(() => {
+        let coef = (Math.random() * (3.00 - 1.5) + 1.5).toFixed(2);
+        let winPercent = Math.floor(Math.random() * (98 - 90 + 1) + 90);
+        let winAmount = (stake * coef).toFixed(2);
+        
         loading.style.display = "none";
-        result.innerHTML = `📊 Multiplicateur: <b>${coef}x</b><br>💰 Gain potentiel: <b>${winAmount} MRU</b><br>✅ Taux de réussite: <b>${winPercent}%</b>`;
+        result.innerHTML = `📊 Multiplicador: <b>${coef}x</b><br>💰 Posible ganancia: <b>${winAmount} BOB</b><br>✅ Precisión estimada: <b>${winPercent}%</b>`;
         result.style.display = "block";
-    }, 2000);
+    }, 2500);
 }
 </script>
+
+</body>
+</html>
 
 </body>
 </html>
