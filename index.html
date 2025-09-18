@@ -3,46 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1xBet Aviator Señales - Bolivia</title>
+<title>1xBet Bolivia - Señales</title>
 <style>
     body {
         font-family: Arial, sans-serif;
         background: #0a1633;
         color: white;
-        margin: 0;
-        padding: 0;
-    }
-
-    /* 🔵 Header estilo 1xBet */
-    header {
-        background: #002244;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 20px;
-        box-shadow: 0px 2px 10px rgba(0,0,0,0.5);
-    }
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-        color: #00a3ff;
-    }
-    .register-btn {
-        background: #00a3ff;
-        color: white;
-        padding: 8px 16px;
-        border-radius: 6px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    .register-btn:hover {
-        background: #007acc;
-    }
-
-    /* 🔵 Main content */
-    main {
         text-align: center;
-        padding: 30px 20px;
+        padding: 20px;
     }
     h1 {
         color: #00a3ff;
@@ -50,15 +18,34 @@
         margin-bottom: 5px;
     }
     .subtitle {
-        font-size: 15px;
+        font-size: 14px;
         color: #bbb;
         margin-bottom: 20px;
     }
+    .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .tab {
+        padding: 10px 20px;
+        margin: 0 5px;
+        cursor: pointer;
+        border-radius: 6px;
+        background: #1e2b4a;
+        color: white;
+        font-weight: bold;
+    }
+    .tab.active {
+        background: #00a3ff;
+    }
+    .section { display: none; }
+    .section.active { display: block; }
     .input-box {
         background: rgba(255, 255, 255, 0.05);
-        padding: 20px;
+        padding: 15px;
         border-radius: 12px;
-        width: 320px;
+        width: 300px;
         margin: auto;
         box-shadow: 0px 0px 15px rgba(0,163,255,0.4);
     }
@@ -73,102 +60,72 @@
         text-align: center;
         outline: none;
     }
-    input::placeholder {
-        color: #aaa;
-    }
+    input::placeholder { color: #aaa; }
     button {
         background: #00a3ff;
         color: white;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
-        padding: 12px;
+        padding: 10px;
         border: none;
         border-radius: 8px;
-        margin-top: 15px;
+        margin-top: 10px;
         cursor: pointer;
         width: 100%;
         transition: 0.3s;
     }
-    button:hover {
-        background: #007acc;
-    }
-    .result {
-        margin-top: 20px;
-        font-size: 20px;
-        font-weight: bold;
-        display: none;
-    }
-    .loading {
+    button:hover { background: #007acc; }
+    .result, .loading {
         margin-top: 15px;
         font-size: 16px;
-        color: #00a3ff;
+        font-weight: bold;
         display: none;
     }
-    .dot {
-        display: inline-block;
-        animation: blink 1s infinite;
-        font-weight: bold;
-    }
+    .loading { color: #00a3ff; }
+    .dot { display: inline-block; animation: blink 1s infinite; }
     .dot:nth-child(2) { animation-delay: 0.2s; }
     .dot:nth-child(3) { animation-delay: 0.4s; }
-
     @keyframes blink {
         0%, 80%, 100% { opacity: 0; }
         40% { opacity: 1; }
     }
-
-    /* 🔵 Opiniones */
-    .opiniones {
-        background: rgba(255, 255, 255, 0.05);
-        margin: 40px auto;
-        padding: 20px;
-        border-radius: 12px;
-        width: 85%;
-        max-width: 500px;
-        box-shadow: 0px 0px 15px rgba(0,163,255,0.4);
+    /* Mines Grid */
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(5, 50px);
+        grid-gap: 8px;
+        justify-content: center;
+        margin-top: 15px;
     }
-    .opiniones h2 {
-        color: #00a3ff;
-        font-size: 20px;
-        margin-bottom: 15px;
+    .cell {
+        width: 50px;
+        height: 50px;
+        background: #1e2b4a;
+        border-radius: 6px;
     }
-    .opinion {
-        display: flex;
-        align-items: center;
-        background: rgba(0,0,0,0.3);
-        padding: 10px;
-        border-radius: 8px;
-        margin-bottom: 10px;
+    .safe { background: #00c851; }
+    /* Penalty Grid */
+    .penalty-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 70px);
+        grid-gap: 10px;
+        justify-content: center;
+        margin-top: 15px;
     }
-    .opinion img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
+    .goal-cell {
+        width: 70px;
+        height: 70px;
+        background: #1e2b4a;
+        border-radius: 6px;
     }
-    .opinion .texto {
-        text-align: left;
-    }
-    .opinion .nombre {
-        font-weight: bold;
-        color: #fff;
-    }
-    .opinion .comentario {
-        font-size: 13px;
-        color: #ddd;
-    }
-
-    /* 🔵 Footer */
+    .target { background: #00c851; }
+    /* Footer */
     .footer {
-        margin-top: 20px;
+        margin-top: 30px;
         font-size: 14px;
         color: #ccc;
-        text-align: center;
-        padding-bottom: 30px;
     }
-    .links {
-        margin-top: 10px;
-    }
+    .links { margin-top: 10px; }
     .links a {
         display: inline-block;
         margin: 5px;
@@ -179,78 +136,49 @@
         background: #1e90ff;
         color: white;
     }
-    .links a.telegram {
-        background: #0088cc;
-    }
-
-    .instruction-btn {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #00a3ff;
-        color: white;
-        padding: 12px 18px;
-        font-size: 14px;
-        font-weight: bold;
-        border-radius: 50px;
-        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-        cursor: pointer;
-    }
+    .links a.telegram { background: #0088cc; }
 </style>
 </head>
 <body>
 
-<!-- 🔵 Header -->
-<header>
-    <div class="logo">1xBet</div>
-    <a href="https://reffpa.com/L?tag=d_4319392m_22811c_&site=4319392&ad=22811&r=registration" target="_blank" class="register-btn">Registro</a>
-</header>
+<h1>🎯 1xBet Señales Bolivia</h1>
+<div class="subtitle">Aviator, Mines & Penalty Predictor con precisión oficial</div>
 
-<!-- 🔵 Main -->
-<main>
-    <h1>🎯 Aviator Señales - Bolivia</h1>
-    <div class="subtitle">Sistema exclusivo con hasta 97% de precisión</div>
+<div class="tabs">
+    <div class="tab active" onclick="showSection('aviator')">✈️ Aviator</div>
+    <div class="tab" onclick="showSection('mines')">💣 Mines</div>
+    <div class="tab" onclick="showSection('penalty')">⚽ Penalty</div>
+</div>
 
+<!-- Aviator Section -->
+<div id="aviator" class="section active">
     <div class="input-box">
         <input type="number" id="stake" placeholder="Ingrese su apuesta (BOB)">
         <button onclick="generateSignal()">🎲 Generar Señal</button>
-        <div class="loading" id="loading">⏳ Analizando y generando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div>
+        <div class="loading" id="loading">⏳ Analizando<span class="dot">.</span><span class="dot">.</span><span class="dot">.</span></div>
         <div class="result" id="result"></div>
-    </div>
-</main>
-
-<!-- 🔵 Opiniones -->
-<div class="opiniones">
-    <h2>💬 Opiniones de usuarios</h2>
-
-    <div class="opinion">
-        <img src="https://i.pravatar.cc/40?img=12" alt="avatar">
-        <div class="texto">
-            <div class="nombre">Carlos R.</div>
-            <div class="comentario">“Con solo 50 BOB gané más de 400 BOB en 10 minutos 🔥”</div>
-        </div>
-    </div>
-
-    <div class="opinion">
-        <img src="https://i.pravatar.cc/40?img=32" alt="avatar">
-        <div class="texto">
-            <div class="nombre">Valeria M.</div>
-            <div class="comentario">“Nunca pensé que funcionaría… ahora pago mis estudios con Aviator ✅”</div>
-        </div>
-    </div>
-
-    <div class="opinion">
-        <img src="https://i.pravatar.cc/40?img=56" alt="avatar">
-        <div class="texto">
-            <div class="nombre">Diego A.</div>
-            <div class="comentario">“El bot me dio señal 2.4x y me saqué 750 BOB. 100% recomendado 🙏”</div>
-        </div>
     </div>
 </div>
 
-<!-- 🔵 Footer -->
+<!-- Mines Section -->
+<div id="mines" class="section">
+    <div class="input-box">
+        <div class="grid" id="grid"></div>
+        <button onclick="predictMines()">🔮 Predecir</button>
+    </div>
+</div>
+
+<!-- Penalty Section -->
+<div id="penalty" class="section">
+    <div class="input-box">
+        <div class="penalty-grid" id="penaltyGrid"></div>
+        <button onclick="predictPenalty()">⚽ Predecir Penal</button>
+    </div>
+</div>
+
+<!-- Footer -->
 <div class="footer">
-    📌 Soporte oficial en Bolivia:<br>
+    📌 Soporte oficial Bolivia:<br>
     <div class="links">
         <a href="https://t.me/DiegoFernandez_bot" target="_blank" class="telegram">📩 @DiegoFernandez_bot</a>
         <a href="https://reffpa.com/L?tag=d_4319392m_22811c_&site=4319392&ad=22811&r=registration" target="_blank">🎮 Jugar en 1xBet</a>
@@ -258,34 +186,67 @@
     <div style="margin-top:5px;">Código promocional: <b>VIVA55</b></div>
 </div>
 
-<!-- 🔵 Botón de instrucciones -->
-<div class="instruction-btn" onclick="alert('📜 Guía rápida:\n\n1️⃣ Ingrese su apuesta en BOB\n2️⃣ Presione “Generar Señal”\n3️⃣ El sistema calcula un multiplicador de 1.5x a 3.0x\n4️⃣ Probabilidad estimada: 90% - 98%\n5️⃣ Use el código VIVA55 para bono extra')">
-    ❓ Cómo jugar
-</div>
-
 <script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+}
+
+// Aviator
 function generateSignal() {
     let stake = document.getElementById("stake").value;
     if (!stake) {
         alert("⚠️ Por favor, ingrese su apuesta en BOB");
         return;
     }
-    
     let loading = document.getElementById("loading");
     let result = document.getElementById("result");
-    
     result.style.display = "none";
     loading.style.display = "block";
-    
     setTimeout(() => {
         let coef = (Math.random() * (3.00 - 1.5) + 1.5).toFixed(2);
         let winPercent = Math.floor(Math.random() * (98 - 90 + 1) + 90);
         let winAmount = (stake * coef).toFixed(2);
-        
         loading.style.display = "none";
         result.innerHTML = `📊 Multiplicador: <b>${coef}x</b><br>💰 Posible ganancia: <b>${winAmount} BOB</b><br>✅ Precisión estimada: <b>${winPercent}%</b>`;
         result.style.display = "block";
-    }, 2500);
+    }, 2000);
+}
+
+// Mines
+function predictMines() {
+    let grid = document.getElementById("grid");
+    grid.innerHTML = "";
+    let safeCells = [];
+    while (safeCells.length < 3) {
+        let r = Math.floor(Math.random() * 25);
+        if (!safeCells.includes(r)) safeCells.push(r);
+    }
+    for (let i = 0; i < 25; i++) {
+        let cell = document.createElement("div");
+        cell.className = "cell";
+        if (safeCells.includes(i)) {
+            cell.classList.add("safe");
+        }
+        grid.appendChild(cell);
+    }
+}
+
+// Penalty
+function predictPenalty() {
+    let penaltyGrid = document.getElementById("penaltyGrid");
+    penaltyGrid.innerHTML = "";
+    let target = Math.floor(Math.random() * 9);
+    for (let i = 0; i < 9; i++) {
+        let cell = document.createElement("div");
+        cell.className = "goal-cell";
+        if (i === target) {
+            cell.classList.add("target");
+        }
+        penaltyGrid.appendChild(cell);
+    }
 }
 </script>
 
