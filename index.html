@@ -25,6 +25,7 @@
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      transition: 0.2s;
     }
     header button.active {
       background: #ffd700; color: #000;
@@ -38,13 +39,17 @@
     input {
       padding: 10px; border-radius: 5px;
       border: none; margin: 10px;
+      width: 220px;
     }
     .btn {
       background: #ffd700; color: #000;
       padding: 12px 20px;
       border: none; border-radius: 6px;
       font-weight: bold; cursor: pointer;
+      transition: 0.2s;
     }
+    .btn:hover { background: #ffcc00; }
+
     .loading { margin: 20px; font-style: italic; }
 
     /* Mines */
@@ -75,6 +80,11 @@
     }
     .predict { background: #ffd700; }
 
+    .reviews, .instructions {
+      background: #10284e; padding: 20px;
+      margin: 20px; border-radius: 10px;
+    }
+
     footer {
       position: fixed; bottom: 0; left: 0;
       width: 100%; background: #07274d;
@@ -84,14 +94,11 @@
       color: #ffd700; font-weight: bold;
       text-decoration: none;
     }
-    .reviews, .instructions {
-      background: #10284e; padding: 20px;
-      margin: 20px; border-radius: 10px;
-    }
   </style>
 </head>
 <body>
 
+  <!-- Навигация -->
   <header>
     <button class="tab active" onclick="showSection('aviator')">✈️ Aviator</button>
     <button class="tab" onclick="showSection('mines')">💣 Mines</button>
@@ -122,7 +129,7 @@
     <div class="goal" id="penaltyGoal"></div>
   </div>
 
-  <!-- Instructions -->
+  <!-- Инструкции -->
   <div class="instructions">
     <h3>📖 Instrucciones</h3>
     <p>1️⃣ Elige el juego (Aviator, Mines o Penalty).</p>
@@ -131,7 +138,7 @@
     <p>4️⃣ Copia la jugada en 1xBet y gana!</p>
   </div>
 
-  <!-- Reviews -->
+  <!-- Отзывы -->
   <div class="reviews">
     <h3>💬 Opiniones de usuarios</h3>
     <p>✅ “Con 50 BOB ya hice 800 BOB en una noche” — Carlos M.</p>
@@ -139,9 +146,12 @@
     <p>✅ “Simple de usar y confiable, lo recomiendo” — José L.</p>
   </div>
 
+  <!-- Футер -->
   <footer>
-    🔗 <a href="https://reffpa.com/L?tag=d_4319392m_22811c_&site=4319392&ad=22811&r=registration" target="_blank">Registrarse en 1xBet (BOB) - Código: VIVA55</a>  
-    | 📩 Contacto: <a href="https://t.me/DiegoFernandez_bot">@DiegoFernandez_bot</a>
+    🔗 <a href="https://reffpa.com/L?tag=d_4319392m_22811c_&site=4319392&ad=22811&r=registration" target="_blank">
+      Registrarse en 1xBet Bolivia (Código: VIVA55)
+    </a><br>
+    📩 Contacto: <a href="https://t.me/DiegoFernandez_bot">@DiegoFernandez_bot</a>
   </footer>
 
   <script>
@@ -204,3 +214,4 @@
   </script>
 </body>
 </html>
+
